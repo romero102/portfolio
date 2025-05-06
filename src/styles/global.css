@@ -1,9 +1,11 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-    --color-primary: #FFDF01;
-    --color-secondary: #EDA938;
-    --color-third: #FDF4EF;
-    --color-fourth: #2C3343;
-    --color-fifth: #010205;
-  }
+  --color-primary: #ffdf01;
+  --color-secondary: #38b6ff;
+  --color-third: #fdf4ef;
+  --color-fourth: #2c3343;
+  --color-fifth: #010205;
+  --font-onest: Onest Variable, sans-serif;
+  --font-orbitron: "Orbitron Variable", sans-serif;
+}

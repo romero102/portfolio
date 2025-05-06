@@ -1,0 +1,26 @@
+---
+import { Projects } from "../content/Projects.js";
+---
+
+<section class="">
+    <p class="text-center font-onest text-xl
+     text-gray-500">PROYECTOS HECHOS <span class="font-orbitron text-secondary text-2xl">4+</span></p>
+     {Projects.map((project) => (
+        <div class=" max-w-sm border border-gray-200 rounded-lg shadow-sm my-3">
+        <img src={project.image} class="rounded-t-lg"/>
+        <div class="p-5">
+            <h6 class="font-orbitron text-secondary text-xl my-1">{project.name}</h6>
+            <p class="font-onest text-lg my-1">{project.description}</p>
+            <div class="my-2">
+                <h6 class="font-orbitron text-lg text-secondary my-2">Tecnologías utilizadas</h6>
+                <div class="flex flex-row gap-2">
+                    {project.technologies.map((technology) => (<p class="bg-blue-200 font-onest text-blue-800 rounded-md p-1 border border-blue-600 font-medium mb-1">{technology}</p>))}
+                </div>
+            </div>
+            {project.page && <div class="my-2"><p class="font-onest text-lg"><span class="font-orbitron text-lg text-secondary">Página : </span>{project.page}</p></div>}   
+            <div class="my-2"><p class="font-onest text-lg"><span class="font-orbitron text-lg text-secondary">GitHub : </span>{project.github}</p></div>       
+        </div>
+    </div>
+     ))}
+        
+  </section>
