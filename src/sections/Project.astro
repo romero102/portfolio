@@ -2,11 +2,13 @@
 import { Projects } from "../content/Projects.js";
 ---
 
-<section class="">
-    <p class="text-center font-onest text-xl
+<section class="my-3">
+    <div class="py-1 my-2 md:flex md:flex-col md:items-center">
+        <p class="text-center font-onest text-xl
      text-gray-500">PROYECTOS HECHOS <span class="font-orbitron text-secondary text-2xl">4+</span></p>
-     {Projects.map((project) => (
-        <div class=" max-w-sm border border-gray-200 rounded-lg shadow-sm my-3">
+     <div class="md:grid grid-cols-2 md:w-[780px]">
+        {Projects.map((project) => (
+        <div class=" max-w-sm border border-gray-200 rounded-lg shadow-sm my-3 mx-auto">
         <img src={project.image} class="rounded-t-lg"/>
         <div class="p-5">
             <h6 class="font-orbitron text-secondary text-xl my-1">{project.name}</h6>
@@ -22,5 +24,6 @@ import { Projects } from "../content/Projects.js";
         </div>
     </div>
      ))}
-        
+     </div>
+    </div>
   </section>
