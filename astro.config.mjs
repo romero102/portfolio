@@ -16,5 +16,5 @@ export default defineConfig({
 
   integrations: [icon()],
   site: 'https://romero102.github.io',
-  base: 'portfolio'
+  base: '/portfolio/'
 });
