@@ -13,7 +13,8 @@
     "@fontsource-variable/orbitron": "^5.2.5",
     "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.4",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.4",
+    "tar": "^7.5.3"
   },
   "devDependencies": {
     "astro-icon": "^1.1.5",
