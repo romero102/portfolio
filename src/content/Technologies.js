@@ -36,6 +36,10 @@ export const Technologies = [
         icon: "node",
     },
     {
+        name: "Express",
+        icon: "express",
+    },
+    {
         name: "MONGO DB",
         icon: "mongo",
     },
