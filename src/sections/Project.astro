@@ -1,29 +1,63 @@
 ---
-import { Projects } from "../content/Projects.js";
+import { Projects } from '../content/Projects.js';
 ---
 
 <section class="my-3">
-    <div class="py-1 my-2 md:flex md:flex-col md:items-center">
-        <p class="text-center font-onest text-xl
-     text-gray-500">PROYECTOS HECHOS <span class="font-orbitron text-secondary text-2xl">4+</span></p>
-     <div class="md:grid grid-cols-2 md:w-[780px]">
-        {Projects.map((project) => (
-        <div class=" max-w-sm border border-gray-200 rounded-lg shadow-sm my-3 mx-auto">
-        <img src={project.image} class="rounded-t-lg"/>
-        <div class="p-5">
-            <h6 class="font-orbitron text-secondary text-xl my-1">{project.name}</h6>
-            <p class="font-onest text-lg my-1">{project.description}</p>
-            <div class="my-2">
+  <div class="py-1 my-2 md:flex md:flex-col md:items-center">
+    <p class="text-center font-onest text-xl
+     text-gray-500">
+      PROYECTOS HECHOS <span class="font-orbitron text-secondary text-2xl">3+</span>
+    </p>
+    <div class="md:grid grid-cols-2 md:w-[780px]">
+      {
+        Projects.map((project) => (
+          <div class=" max-w-sm border border-gray-200 rounded-lg shadow-sm my-3 mx-auto">
+            <img src={project.image} class="rounded-t-lg" />
+            <div class="p-5">
+              <h6 class="font-orbitron text-secondary text-xl my-1">{project.name}</h6>
+              <p class="font-onest text-lg my-1">{project.description}</p>
+              <div class="my-2">
                 <h6 class="font-orbitron text-lg text-secondary my-2">Tecnologías utilizadas</h6>
                 <div class="flex flex-wrap gap-2">
-                    {project.technologies.map((technology) => (<p class="bg-blue-200 font-onest text-blue-800 rounded-md p-1 border border-blue-600 font-medium mb-1">{technology}</p>))}
+                  {project.technologies.map((technology) => (
+                    <p class="bg-blue-200 font-onest text-blue-800 rounded-md p-1 border border-blue-600 font-medium mb-1">
+                      {technology}
+                    </p>
+                  ))}
                 </div>
+              </div>
+              {project.page && (
+                <div class="my-2">
+                  <p class="font-onest text-lg break-words">
+                    <span class="font-orbitron text-lg text-secondary">Página : </span>{' '}
+                    <a
+                      href={project.page}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-blue-600 hover:text-blue-800 underline"
+                    >
+                      {project.page}
+                    </a>
+                  </p>
+                </div>
+              )}
+              <div class="my-2">
+                <p class="font-onest text-lg break-words">
+                  <span class="font-orbitron text-lg text-secondary">GitHub : </span>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-600 hover:text-blue-800 underline"
+                  >
+                    {project.github}
+                  </a>
+                </p>
+              </div>
             </div>
-            {project.page && <div class="my-2"><p class="font-onest text-lg break-words"><span class="font-orbitron text-lg text-secondary">Página : </span>{project.page}</p></div>}   
-            <div class="my-2"><p class="font-onest text-lg break-words"><span class="font-orbitron text-lg text-secondary">GitHub : </span>{project.github}</p></div>       
-        </div>
+          </div>
+        ))
+      }
     </div>
-     ))}
-     </div>
-    </div>
-  </section>
+  </div>
+</section>
