@@ -1,13 +1,22 @@
 ---
-import {Technologies} from "../content/Technologies"
-import { Icon } from 'astro-icon/components'
+import { technologies } from '../content/technologies';
+import { Icon } from 'astro-icon/components';
 ---
 
-<section class="my-3 p-3">
-<p class="text-center font-onest text-xl
-     text-gray-500">TECNOLOGIAS <span class="font-orbitron text-secondary text-2xl">10+</span></p>
-<div class="flex flex-wrap gap-2 mt-3 p-3 justify-center">
-{Technologies.map((technology) => (<div class="p-1 my-2"><Icon class="w-16 h-16 mx-auto" name={technology.icon} /><p class="font-orbitron text-lg font-semibold text-center p-3">{technology.name}</p></div>))}
-</div>
-</section>
+<section class="px-6 py-10">
+  <p class="font-orbitron text-xs uppercase tracking-[0.15em] text-[#7c3aed] text-center mb-8">
+    Stack técnico
+  </p>
 
+  <div class="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
+    {technologies.map((technology) => (
+      <div class="flex flex-col items-center bg-[#0f0f1a] border border-[#1e1e3a] hover:border-[#7c3aed44] rounded-lg px-4 py-3 w-20 transition-colors group">
+        <Icon
+          class="w-8 h-8 text-[#7c3aed] group-hover:text-[#a78bfa] transition-colors"
+          name={technology.icon}
+        />
+        <p class="font-onest text-xs text-slate-400 text-center mt-2 leading-tight">{technology.name}</p>
+      </div>
+    ))}
+  </div>
+</section>

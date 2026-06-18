@@ -1,46 +1,120 @@
 ---
-//import Welcome from '../components/Welcome.astro';
 import '../styles/global.css';
 import { Icon } from 'astro-icon/components';
-// Supports weights 400-900
 import '@fontsource-variable/orbitron';
 import '@fontsource-variable/onest';
-
 import Layout from '../layouts/Layout.astro';
 import Project from '../sections/Project.astro';
 import Technology from '../sections/Technology.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-  <main class="p-4">
-    <h1 class="text-2xl font-orbitron text-fifth text-center p-6 mt-2">Ilsen Romero Caraballo</h1>
-    <img src="2.png" alt="Foto de perfil" class="w-80 h-auto m-auto" />
-    <div class="md:flex md:justify-center">
-      <p class="font-onest text-lg py-1 px-5 md:px-0 md:w-[780px]">
-        Fullstack Developer con experiencia construyendo sistemas web completos con el stack MERN.
-        He desarrollado sistemas para entornos institucionales reales, desde el diseño de la base de
-        datos hasta el deploy en producción. Busco unirme a un equipo remoto donde pueda aportar
-        soluciones concretas y seguir creciendo.
+  <main class="bg-[#0a0a0f] min-h-screen text-slate-200">
+
+    <!-- Hero -->
+    <section class="flex flex-col items-center text-center px-6 pt-16 pb-12">
+
+      <!-- Avatar hexagonal -->
+      <div class="relative w-[118px] h-[134px] mb-6">
+        <div
+          class="absolute inset-0 bg-[#7c3aed]"
+          style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);"
+        ></div>
+        <img
+          src="imagen1.jpeg"
+          alt="Foto de perfil de Ilsen Romero"
+          class="absolute"
+          style="
+            top: 3px; left: 3px;
+            width: 112px; height: 128px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            object-fit: cover;
+          "
+        />
+      </div>
+
+      <h1 class="font-orbitron text-2xl font-bold text-white mb-2">
+        Ilsen Romero Caraballo
+      </h1>
+      <p class="font-onest text-sm uppercase tracking-widest text-[#7c3aed] mb-4">
+        Fullstack Developer · MERN Stack
       </p>
-    </div>
+      <p class="font-onest text-base text-slate-400 leading-relaxed max-w-lg mb-6">
+        Construyo sistemas web completos desde el diseño de la base de datos hasta el deploy en producción.
+        Experiencia en entornos institucionales reales. Disponible para trabajo remoto.
+      </p>
+
+      <!-- Badges de stack -->
+      <div class="flex flex-wrap justify-center gap-2 mb-8">
+        {['Node.js', 'React', 'MongoDB', 'Express', 'JWT', 'TailwindCSS'].map(tech => (
+          <span class="bg-[#1a1a2e] border border-[#7c3aed33] text-[#a78bfa] text-xs px-3 py-1 rounded-full font-onest">
+            {tech}
+          </span>
+        ))}
+      </div>
+
+      <!-- Botones CV -->
+      <div class="flex gap-3">
+        <a href="cv-spanish.pdf" target="_blank" rel="noopener">
+          <button class="flex items-center gap-2 bg-[#7c3aed] hover:bg-[#6d28d9] text-white text-sm font-medium px-5 py-2 rounded-lg transition-colors">
+            <Icon class="size-4" name="download" fill="none" />
+            CV Español
+          </button>
+        </a>
+        <a href="cv-english.pdf" target="_blank" rel="noopener">
+          <button class="flex items-center gap-2 bg-transparent hover:bg-[#1a1a2e] text-[#a78bfa] border border-[#7c3aed55] text-sm font-medium px-5 py-2 rounded-lg transition-colors">
+            <Icon class="size-4" name="download" fill="none" />
+            CV English
+          </button>
+        </a>
+      </div>
+    </section>
+
+    <hr class="border-[#1e1e3a] mx-6" />
+
+    <!-- Proyectos -->
     <Project />
+
+    <hr class="border-[#1e1e3a] mx-6" />
+
+    <!-- Tecnologías -->
     <Technology />
-    <div class="flex justify-center gap-4">
-      <a href="cv-spanish.pdf" target="_blank" rel="noopener">
-        <button class="bg-white text-secondary hover:bg-secondary hover:text-white border border-gray-200 rounded-md shadow-xs mx-auto flex py-2 px-4 font-medium my-6">
-          <Icon class="size-6 mr-1 stroke-current" name="download" fill="none" />
-          Español CV
-        </button>
-      </a>
-      <a href="cv-english.pdf" target="_blank" rel="noopener">
-        <button class="bg-white text-secondary hover:bg-secondary hover:text-white border border-gray-200 rounded-md shadow-xs mx-auto flex py-2 px-4 font-medium my-6">
-          <Icon class="size-6 mr-1 stroke-current" name="download" fill="none" />
-          English CV
-        </button>
-      </a>
-    </div>
+
+    <hr class="border-[#1e1e3a] mx-6" />
+
+    <!-- Contacto -->
+    <section class="flex flex-col items-center text-center px-6 py-12">
+      <p class="font-orbitron text-xs uppercase tracking-[0.15em] text-[#7c3aed] mb-3">Contacto</p>
+      <h2 class="font-orbitron text-lg text-white mb-2">¿Trabajamos juntos?</h2>
+      <p class="font-onest text-sm text-slate-500 mb-6">Disponible para proyectos remotos · Respondo en menos de 24h</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a
+          href="mailto:romeroilsen01@gmail.com"
+          class="flex items-center gap-2 font-onest text-sm text-[#a78bfa] bg-[#0f0f1a] border border-[#1e1e3a] hover:border-[#7c3aed55] px-4 py-2 rounded-lg transition-colors"
+        >
+          <Icon class="size-4" name="mail" fill="none" />
+          romeroilsen01@gmail.com
+        </a>
+        <a
+          href="https://github.com/romero102"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center gap-2 font-onest text-sm text-[#a78bfa] bg-[#0f0f1a] border border-[#1e1e3a] hover:border-[#7c3aed55] px-4 py-2 rounded-lg transition-colors"
+        >
+          <Icon class="size-4" name="brand-github" fill="none" />
+          GitHub
+        </a>
+        <a
+          href="https://linkedin.com/in/tu-perfil"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center gap-2 font-onest text-sm text-[#a78bfa] bg-[#0f0f1a] border border-[#1e1e3a] hover:border-[#7c3aed55] px-4 py-2 rounded-lg transition-colors"
+        >
+          <Icon class="size-4" name="brand-linkedin" fill="none" />
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
   </main>
 </Layout>

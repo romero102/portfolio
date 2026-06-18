@@ -1,4 +1,4 @@
-export const Technologies = [
+export const technologies = [
     {
         name: "JAVASCRIPT",
         icon: "js",
