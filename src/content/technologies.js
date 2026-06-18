@@ -40,7 +40,7 @@ export const technologies = [
         icon: "express",
     },
     {
-        name: "MONGO DB",
+        name: "MONGODB",
         icon: "mongo",
     },
 ]
